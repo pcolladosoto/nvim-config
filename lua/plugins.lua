@@ -65,19 +65,66 @@ return require('packer').startup(function(use)
   -- Packer can manage itself :)
 	use "wbthomason/packer.nvim"
 
-	-- General plugins
+	use "kyazdani42/nvim-web-devicons"
+
 	use {
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true }
+		"echasnovski/mini.statusline",
+		version = false,
+		config = function() require("mini.statusline").setup() end
+	}
+
+	-- Treesitter: provides syntax analysis which is used by syntax
+	-- highlighting and such-
+	use {
+		"nvim-treesitter/nvim-treesitter",
+		config = function() require("treesitter") end
+	}
+
+	-- The Telescope file finder. It requires a some utility
+	-- functions provided by `plenary.nvim`.
+	use {
+		"nvim-telescope/telescope.nvim", tag = "0.1.1",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function() require("telescope") end
 	}
 
 	-- Themes and aesthetics
-	use "navarasu/onedark.nvim"
+	use {
+		"navarasu/onedark.nvim",
+		config = function() require("colorscheme") end
+	}
+		
 	use "folke/tokyonight.nvim"
 
-  -- We'll have to update config files and such if we installed Packer
-  -- just now. Otherwise we have little else to do.
-  if packer_bootstrap then
-    require('packer').sync()
-  end
+	use "hrsh7th/cmp-nvim-lsp"
+	use "hrsh7th/cmp-buffer"
+	use "hrsh7th/cmp-path"
+	use "hrsh7th/cmp-cmdline"
+	use "hrsh7th/nvim-cmp"
+
+	use "dcampos/nvim-snippy"
+	use "dcampos/cmp-snippy"
+
+	-- Ready made LSP configurations for several servers. Be sure to check
+	-- `lsp.lua` for more info and pointers :)
+	use {
+		"neovim/nvim-lspconfig",
+		config = function() require("lsp") end
+	}
+
+		use {
+		"echasnovski/mini.cursorword",
+		config = function() require("mini.cursorword").setup({delay = 100}) end
+	}
+
+	use {
+		"mhartington/formatter.nvim",
+		config = function() require("formatter_conf") end
+	}
+
+	-- We'll have to update config files and such if we installed Packer
+	-- just now. Otherwise we have little else to do.
+	if packer_bootstrap then
+		require('packer').sync()
+	end
 end)

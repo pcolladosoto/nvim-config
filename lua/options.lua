@@ -1,6 +1,11 @@
 local set = vim.opt
 
 -- set.nocompatible = true
+--
+-- Configure the leader key so that it's not the default (i.e. `\`)
+-- this is quite useful for mappings! Be sure to check the following
+-- for more info https://neovim.io/doc/user/map.html#mapleader.
+vim.g.mapleader = ","
 
 set.splitbelow = true
 set.splitright = true

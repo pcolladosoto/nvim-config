@@ -31,3 +31,17 @@ vim.keymap.set("n", "<C-Left>",  ":vertical resize +3<CR>", default_opts)
 vim.keymap.set("n", "<C-Right>", ":vertical resize -3<CR>", default_opts)
 vim.keymap.set("n", "<C-Up>",    ":resize +3<CR>",          default_opts)
 vim.keymap.set("n", "<C-Down>",  ":resize -3<CR>",          default_opts)
+
+-- Telescope's keymaps
+
+-- Let's bind Telescope's actions to a local variable while making
+-- sure it's loaded and present
+local telescope_actions = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', telescope_actions.find_files, default_opts)
+vim.keymap.set('n', '<leader>fg', telescope_actions.live_grep,  default_opts)
+vim.keymap.set('n', '<leader>fb', telescope_actions.buffers,    defualt_opts)
+vim.keymap.set('n', '<leader>fh', telescope_actions.help_tags,  default_opts)
+
+-- Formatter
+vim.keymap.set("n", "<leader>fm", ":Format<CR>", default_opts)
+vim.keymap.set("n", "<leader>Fm", ":FormatWrite<CR>", default_opts)
