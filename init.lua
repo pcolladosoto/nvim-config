@@ -12,10 +12,6 @@
 -- context on the stuff.
 require("options")
 
--- Configure the color scheme. We'll also configure terminal color options
--- such as `termguicolor` and such.
--- require("colorscheme")
-
 -- Configure keymaps through the `keymap` module. You've got more info within
 -- the file itself.
 require("keymaps")
@@ -23,18 +19,3 @@ require("keymaps")
 -- Time for plugins! We're using Packer as a plugin manager to make stuff a
 -- bit easier.
 require("plugins")
-
--- Load plugin-specific configurations
--- require("lualine")
-
--- Load TreeSitter's configuration
--- require("treesitter")
-
--- Load Telescope¡s configuration
--- require("telescope")
-
--- Load LSP-related configs
--- require("lsp")
-
--- Load illuminate's configuration
--- require("illuminate")

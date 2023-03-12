@@ -105,8 +105,6 @@ return require('packer').startup(function(use)
 	use "dcampos/nvim-snippy"
 	use "dcampos/cmp-snippy"
 
-	-- Ready made LSP configurations for several servers. Be sure to check
-	-- `lsp.lua` for more info and pointers :)
 	use {
 		"neovim/nvim-lspconfig",
 		config = function() require("lsp") end

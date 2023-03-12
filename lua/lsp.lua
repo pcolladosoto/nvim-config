@@ -85,6 +85,9 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 -- Be sure to check https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 -- for different server configurations.
 
+-- Check https://github.com/neovim/nvim-lspconfig for a ton of information on custom keymaps once
+-- an LSP server attaches to the buffer.
+
 -- GoPls
 lspconfig.gopls.setup({
 	on_attach = function(client, bufnr)
