@@ -65,12 +65,15 @@ return require('packer').startup(function(use)
   -- Packer can manage itself :)
 	use "wbthomason/packer.nvim"
 
-	use "kyazdani42/nvim-web-devicons"
+	use {
+		"kyazdani42/nvim-web-devicons",
+		opt = true
+	}
 
 	use {
 		"echasnovski/mini.statusline",
 		version = false,
-		config = function() require("mini.statusline").setup() end
+		config = function() require("mini.statusline").setup({use_icons = true}) end
 	}
 
 	-- Treesitter: provides syntax analysis which is used by syntax
