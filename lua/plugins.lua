@@ -80,15 +80,22 @@ return require('packer').startup(function(use)
 	-- highlighting and such-
 	use {
 		"nvim-treesitter/nvim-treesitter",
-		config = function() require("treesitter") end
+		config = function() require("treesitter_conf") end
 	}
 
 	-- The Telescope file finder. It requires a some utility
 	-- functions provided by `plenary.nvim`.
 	use {
 		"nvim-telescope/telescope.nvim", tag = "0.1.1",
-		requires = { "nvim-lua/plenary.nvim" },
-		config = function() require("telescope") end
+		requires = { "nvim-lua/plenary.nvim" }
+	}
+
+	-- TODO: Maybe use `after` to make the file browser load after Telescope...
+	use {
+		"nvim-telescope/telescope-file-browser.nvim",
+		after = "telescope.nvim",
+		-- require = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		config = function() require("telescope_conf") end
 	}
 
 	-- Themes and aesthetics

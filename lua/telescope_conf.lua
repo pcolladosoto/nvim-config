@@ -3,9 +3,9 @@
 --
 -- Let's make sure Telescope's available before trying to do
 -- anything else
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
+local ok, telescope = pcall(require, "telescope")
+if not ok then
+	return
 end
 
 -- Let's bind the actions to a local variable: we'll be using it a lot!
@@ -30,3 +30,6 @@ telescope.setup({
 		}
 	}
 })
+
+-- Start the file browser extension!
+telescope.load_extension("file_browser")

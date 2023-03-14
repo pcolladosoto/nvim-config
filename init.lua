@@ -6,6 +6,10 @@
 -- Check http://www.lua.org/manual/5.1/manual.html#pdf-require for more info on how
 -- we're importing other configuration files through `require()`.
 
+-- Time for plugins! We're using Packer as a plugin manager to make stuff a
+-- bit easier.
+require("plugins")
+
 -- General options configured through the `vim.opt` interface as seen on
 -- https://neovim.io/doc/user/lua.html#vim.opt. You might also want to refer
 -- to https://neovim.io/doc/user/lua.html#lua-vimscript for a bit more of
@@ -16,6 +20,3 @@ require("options")
 -- the file itself.
 require("keymaps")
 
--- Time for plugins! We're using Packer as a plugin manager to make stuff a
--- bit easier.
-require("plugins")
